@@ -34,3 +34,24 @@ export const ButtonContainer = styled.header`
 export const ButtonIcon = styled.img`
   width: 20px;
 `;
+
+export const SearchContainer = styled.header`
+  display: flex;
+`;
+
+export const SearchImputContainer = styled.div`
+  width: 450px;
+  height: 35px;
+  border: 1px solid #d3d3d3;
+  border-radius: 40px 0 0 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+`;
+
+export const SearchImput = styled.input`
+  width: 100%;
+  height: 25px;
+  outline: none;
+  border: none;
+`;

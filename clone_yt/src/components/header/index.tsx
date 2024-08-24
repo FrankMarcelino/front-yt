@@ -1,4 +1,12 @@
-import { Container, LogoContainer, ButtonContainer, ButtonIcon } from "./style";
+import {
+  Container,
+  LogoContainer,
+  ButtonContainer,
+  ButtonIcon,
+  SearchContainer,
+  SearchImputContainer,
+  SearchImput,
+} from "./style";
 import HamburgerIcon from "../../assets/hamburger.png";
 import Logo from "../../assets/YouTube-Logo.png";
 
@@ -15,6 +23,12 @@ function Header() {
           src={Logo}
         />
       </LogoContainer>
+
+      <SearchContainer>
+        <SearchImputContainer>
+          <SearchImput placeholder="Pesquisar" />
+        </SearchImputContainer>
+      </SearchContainer>
     </Container>
   );
 }
