@@ -17,11 +17,11 @@ export const LogoContainer = styled.header`
   align-items: center;
 `;
 
-export const ButtonContainer = styled.header`
+export const ButtonContainer = styled.div<{ margin?: string }>`
   width: 40px;
   height: 40px;
-  boder-radius: 50%;
-  margin: 0 10px 0 0;
+  border-radius: 50%;
+  margin: ${({ margin }) => (margin ? margin : "0")};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,4 +54,24 @@ export const SearchImput = styled.input`
   height: 25px;
   outline: none;
   border: none;
+`;
+
+export const SearchButton = styled.div`
+  border-radius: 0 40px 40px 0;
+  height: 35px;
+  width: 70px;
+  background-color: #f8f8f8;
+  border: 1px solid #d3d3d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  :hover {
+    background-color: #f0f0f0;
+  }
+`;
+
+export const HeaderButton = styled.div`
+  width: 200px;
+  display: flex;
 `;
