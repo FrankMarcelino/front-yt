@@ -1,96 +1,21 @@
-import { Container, MenuItem } from "./styles";
+import { Container, MenuItem, ButtonIcon } from "./styles";
+import SearchIcon from "../../assets/search.png";
 
 const itens = [
   {
     name: "Inicio",
   },
   {
-    name: "Em alta",
+    name: "Shorts",
   },
   {
     name: "Inscrições",
   },
   {
-    name: "Originais",
+    name: "Biblioteca",
   },
   {
     name: "Histórico",
-  },
-  {
-    name: "Inscrições",
-  },
-  {
-    name: "Curtidas",
-  },
-  {
-    name: "Inscrições",
-  },
-  {
-    name: "Inscrições",
-  },
-  {
-    name: "Inscrições",
-  },
-  {
-    name: "Inscrições",
-  },
-
-  {
-    name: "Inscrições",
-  },
-  {
-    name: "Inscrições",
-  },
-  {
-    name: "Inscrições",
-  },
-  {
-    name: "Inscrições",
-  },
-
-  {
-    name: "Inscrições",
-  },
-  {
-    name: "Inscrições",
-  },
-  {
-    name: "Inscrições",
-  },
-  {
-    name: "Inscrições",
-  },
-  {
-    name: "Inscrições",
-  },
-
-  {
-    name: "Inscrições",
-  },
-  {
-    name: "Inscrições",
-  },
-  {
-    name: "Inscrições",
-  },
-  {
-    name: "Inscrições",
-  },
-  {
-    name: "Inscrições",
-  },
-
-  {
-    name: "Inscrições",
-  },
-  {
-    name: "Inscrições",
-  },
-  {
-    name: "Inscrições",
-  },
-  {
-    name: "Inscrições",
   },
 ]; // simulando uma requição para pegar os itens do menu
 
@@ -101,7 +26,10 @@ function Menu({ openMenu }: IProps) {
   return (
     <Container openMenu={openMenu}>
       {itens.map((item) => (
-        <MenuItem>{item.name}</MenuItem>
+        <MenuItem openMenu={openMenu}>
+          <ButtonIcon alt="" src={SearchIcon} />
+          <span>{item.name}</span>
+        </MenuItem>
       ))}
     </Container>
   );
