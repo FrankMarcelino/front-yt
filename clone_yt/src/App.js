@@ -1,9 +1,17 @@
 import Header from "./components/header";
+import Menu from "./components/menu";
+import { useState } from "react";
 
 function App() {
+  const [openMenu, setOpenMenu] = useState(true);
+
   return (
     <div className="App">
-      <Header />
+      <Header openMenu={openMenu} setOpenMenu={setOpenMenu} />
+      <div style={{ width: "100%", display: "flex" }}>
+        <Menu openMenu={openMenu} setOpenMenu={setOpenMenu} />
+        <div style={{ backgroundColor: "#000", width: "100%" }}></div>
+      </div>
     </div>
   );
 }

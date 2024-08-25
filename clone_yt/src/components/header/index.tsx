@@ -8,7 +8,7 @@ import {
   SearchImput,
   SearchButton,
   HeaderButton,
-} from "./style";
+} from "./styles";
 import HamburgerIcon from "../../assets/hamburger.png";
 import Logo from "../../assets/YouTube-Logo.png";
 import SearchIcon from "../../assets/search.png";
@@ -16,11 +16,18 @@ import MicIcon from "../../assets/microfone-gravador.png";
 import VideoIcon from "../../assets/video.png";
 import NotificationIcon from "../../assets/sino.png";
 
-function Header() {
+interface IProps {
+  openMenu: boolean;
+  setOpenMenu: (openMenu: boolean) => void;
+}
+function Header({ openMenu, setOpenMenu }: IProps) {
   return (
     <Container>
       <LogoContainer>
-        <ButtonContainer margin="0 10px 0 0">
+        <ButtonContainer
+          onClick={() => setOpenMenu(!openMenu)}
+          margin="0 10px 0 0"
+        >
           <ButtonIcon alt="" src={HamburgerIcon} />
         </ButtonContainer>
         <img
