@@ -17,6 +17,10 @@ import {
   Newspaper,
   Trophy,
   Lightbulb,
+  Gear,
+  Flag,
+  QuestionCircle,
+  InfoSquare,
 } from "react-bootstrap-icons";
 
 const mainItemsMenu = [
@@ -97,22 +101,43 @@ const blockExsplorer = [
   },
 ];
 
+const blockToos = [
+  {
+    name: "Configurações",
+    icon: <Gear size={20} />,
+  },
+  {
+    name: "Histórico de denuncias",
+    icon: <Flag size={20} />,
+  },
+  {
+    name: "Ajuda",
+    icon: <QuestionCircle size={20} />,
+  },
+  {
+    name: "Enviar Feedback",
+    icon: <InfoSquare size={20} />,
+  },
+];
 interface IProps {
   openMenu: boolean;
 }
 
 function Menu({ openMenu }: IProps) {
   const itemsToShow = openMenu
-    ? [...mainItemsMenu, ...blockLogin, ...blockExsplorer]
+    ? [...mainItemsMenu, ...blockLogin, ...blockExsplorer, ...blockToos]
     : mainItemsMenu;
 
   return (
     <Container openMenu={openMenu}>
-      {itemsToShow.map((item) => (
-        <MenuItem openMenu={openMenu} key={item.name}>
-          {item.icon}
-          <span>{item.name}</span>
-        </MenuItem>
+      {itemsToShow.map((item, index) => (
+        <div key={item.name}>
+          <MenuItem openMenu={openMenu}>
+            {item.icon}
+            <span>{item.name}</span>
+          </MenuItem>
+          {index < itemsToShow.length - 1 && <div className="divider" />}
+        </div>
       ))}
     </Container>
   );
