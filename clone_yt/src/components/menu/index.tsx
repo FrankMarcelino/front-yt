@@ -1,12 +1,10 @@
-import { Container, MenuItem, ButtonIcon } from "./styles";
+import { Container, MenuItem } from "./styles";
 import {
   HouseDoor,
   FileEarmarkPlay,
   CollectionPlay,
   PlayBtn,
   ClockHistory,
-  FilePerson,
-  ChevronLeft,
   Fire,
   Bag,
   Film,
@@ -130,15 +128,16 @@ function Menu({ openMenu }: IProps) {
 
   return (
     <Container openMenu={openMenu}>
-      {itemsToShow.map((item, index) => (
-        <div key={item.name}>
-          <MenuItem openMenu={openMenu}>
-            {item.icon}
-            <span>{item.name}</span>
-          </MenuItem>
-          {index < itemsToShow.length - 1 && <div className="divider" />}
-        </div>
-      ))}
+      <div>
+        {itemsToShow.map((item) => (
+          <div key={item.name}>
+            <MenuItem openMenu={openMenu}>
+              {item.icon}
+              <span>{item.name}</span>
+            </MenuItem>
+          </div>
+        ))}
+      </div>
     </Container>
   );
 }
