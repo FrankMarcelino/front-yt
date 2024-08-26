@@ -24,7 +24,7 @@ export const MenuItem = styled.div<{ openMenu: boolean }>`
   justify-content: ${({ openMenu }) => (openMenu ? "none" : "center")};
 
   span {
-    font-weight: ${({ openMenu }) => (openMenu ? "600" : "400")};
+    font-weight: ${({ openMenu }) => (openMenu ? "400" : "400")};
     margin-left: ${({ openMenu }) => (openMenu ? "20px" : "none")};
     font-size: ${({ openMenu }) => (openMenu ? "16px" : "12px")};
   }
