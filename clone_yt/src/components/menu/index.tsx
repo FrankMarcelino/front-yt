@@ -39,6 +39,7 @@ const mainItemsMenu = [
     icon: <PlayBtn size={20} />,
   },
   {
+    divisor: true,
     name: "Histórico",
     icon: <ClockHistory size={20} />,
   },
@@ -53,6 +54,7 @@ const blockLogin = [
 
 const blockExsplorer = [
   {
+    divisor: true,
     name: "Explorar",
     icon: "",
   },
@@ -101,6 +103,7 @@ const blockExsplorer = [
 
 const blockToos = [
   {
+    divisor: true,
     name: "Configurações",
     icon: <Gear size={20} />,
   },
@@ -131,10 +134,14 @@ function Menu({ openMenu }: IProps) {
       <div>
         {itemsToShow.map((item) => (
           <div key={item.name}>
-            <MenuItem openMenu={openMenu}>
-              {item.icon}
-              <span>{item.name}</span>
-            </MenuItem>
+            {"divisor" in item ? (
+              <div className="divider" />
+            ) : (
+              <MenuItem openMenu={openMenu}>
+                {item.icon}
+                <span>{item.name}</span>
+              </MenuItem>
+            )}
           </div>
         ))}
       </div>
