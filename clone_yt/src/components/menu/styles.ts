@@ -4,11 +4,13 @@ export const Container = styled.div<{ openMenu: boolean }>`
   width: ${({ openMenu }) => (openMenu ? "250px" : "100")};
   height: calc(100vh - 55px);
   box-sizing: border-box;
-  padding: 65px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
   display: flex;
   align-items: center;
   flex-direction: column;
   overflow-y: auto;
+  position: sticky;
+  top: 55px;
 `;
 
 export const MenuItem = styled.div<{ openMenu: boolean }>`
