@@ -1,9 +1,13 @@
 import VideoComponent from "../../components/videoComponent";
 import { Container } from "./styles";
 
-function Home() {
+interface IProps {
+  openMenu: boolean;
+}
+
+function Home({ openMenu }: IProps) {
   return (
-    <Container>
+    <Container openMenu={openMenu}>
       <VideoComponent />
       <VideoComponent />
       <VideoComponent />

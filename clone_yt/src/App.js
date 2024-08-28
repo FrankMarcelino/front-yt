@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/header";
 import Menu from "./components/menu";
+import FilterTopics from "./components/fiilterTopics";
 
 import Home from "./pages/home";
 import History from "./pages/history";
@@ -14,8 +15,20 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Header openMenu={openMenu} setOpenMenu={setOpenMenu} />
-        <div style={{ width: "100%", display: "flex" }}>
-          <Menu openMenu={openMenu} />
+
+        <div
+          style={{
+            width: "100%",
+            display: "grid",
+            gridTemplateColumns: openMenu ? "menu filterTopics" : "menu 4fr",
+          }}
+        >
+          <FilterTopics
+            openMenu={openMenu}
+            setOpenMenu={setOpenMenu}
+            style={{ gridArea: "filterTopics" }}
+          />
+          <Menu openMenu={openMenu} style={{ gridArea: "menu" }} />
           <div
             style={{
               width: "100%",
